@@ -1,0 +1,240 @@
+:root {
+  --white: #ffffffff;
+  --berkeley-blue: #12355bff;
+  --crimson: #d72638ff;
+  --dark-purple: #420039ff;
+  --light-gray: #f0f0f0;
+}
+
+html {
+  height: 100%;
+  background: linear-gradient(135deg, var(--dark-purple), var(--berkeley-blue));
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+  color: var(--white);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#title {
+  width: 200px;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+.main-container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px 0;
+}
+
+main {
+  background-color: rgb(255 255 255 / 21%);
+  border-radius: 15px;
+  padding: 20px;
+  flex: 1;
+  text-align: center;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 79%);
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: var(--crimson);
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+ol {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.tooltip, .input-group {
+  margin: 10px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#languageSelect, #minStars, #maxStars, #topics {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--berkeley-blue);
+  font-size: 1rem;
+  background-color: var(--light-gray);
+  color: var(--berkeley-blue);
+}
+#languageSelect, #topics{
+  width: 100%;
+}
+#openSource {
+  transform: scale(1.5);
+  margin-left: 10px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--crimson), var(--dark-purple));
+  color: var(--white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: linear-gradient(135deg, var(--dark-purple), var(--crimson));
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--crimson);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--dark-purple);
+}
+
+.hidden {
+  display: none;
+}
+
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid var(--crimson);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: var(--dark-purple);
+  color: var(--white);
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the text */
+  left: 50%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dark-mode {
+  background: linear-gradient(135deg, #000000, #333333, #666666);
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#repoDetailsContainer {
+  flex: 0 0 300px;
+  background-color: rgb(255 255 255 / 21%);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 79%);
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;
+  height: fit-content;
+  align-self: center;
+}
+
+.repo-card {
+  width: 100%;
+  text-align: left;
+}
+
+.repo-card h2 {
+  margin-top: 0;
+}
+
+.repo-card p {
+  margin: 5px 0;
+}
+
+.repo-card a {
+  color: var(--berkeley-blue);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.repo-card a:hover {
+  text-decoration: underline;
+}

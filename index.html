@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>GitHub Discover</title>
+</head>
+<body>
+    <header>
+        <img src="assets/GithubDiscover.svg" id="title" alt="GitHub Discover title with GitHub Logo">
+        <nav>
+            <button id="loginBtn">Login with GitHub</button>
+            <button id="darkModeToggle">Dark Mode</button>
+        </nav>
+    </header>
+    <div class="main-container">
+        <main id="searchDiv">
+            <h1>Welcome to GitHub Discover!</h1>
+            <p>Find and explore random GitHub repositories with ease:</p>
+            <div class="container">
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="topics">Topics:</label>
+                        <input type="text" id="topics" placeholder="e.g., machine-learning, web-development">
+                    </div>
+                    <div class="tooltip">
+                        <label for="languageSelect">Select a Language (optional):</label>
+                        <select id="languageSelect">
+                            <option value="" selected>Any language</option>
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                        <span class="tooltiptext">Enter a programming language</span>
+                    </div>
+                    <div class="input-group stars">
+                        <label for="minStars">Min Stars:</label>
+                        <input type="number" id="minStars" placeholder="Min Stars" min="0" step="1">
+                    </div>
+                    <div class="input-group stars">
+                        <label for="maxStars">Max Stars:</label>
+                        <input type="number" id="maxStars" placeholder="Max Stars" min="0" step="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="openSource">Open Source:</label>
+                        <input type="checkbox" id="openSource">
+                    </div>
+                    <button id="fetchRepoBtn">Find a Repo</button>
+                </div>
+            </div>
+           
+        </main>
+        <aside id="repoDetailsContainer" class="hidden">
+            <div id="loadingSpinner" class="hidden">
+                <!-- Simple CSS spinner -->
+                <div class="spinner"></div>
+            </div>
+            <div id="repoDetails" class="repo-card">
+                <!-- Repository details will be displayed here -->
+            </div>
+            <button id="refreshBtn" class="hidden">Refresh</button>
+        </aside>
+    </div>
+    <footer>
+        <p>&copy; 2025 GitHub Discover</p>
+        <p><a href="https://github.com/your-username" target="_blank">Follow me on GitHub</a></p>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
